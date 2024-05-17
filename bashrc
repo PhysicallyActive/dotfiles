@@ -204,12 +204,3 @@ set +a
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-export http_proxy="http://localhost:3128"
-export HTTP_PROXY="http://localhost:3128"
-export https_proxy="http://localhost:3128"
-export HTTPS_PROXY="http://localhost:3128"
-export ftp_proxy="http://localhost:3128"
-export FTP_PROXY="http://localhost:3128"
-export all_proxy="http://localhost:3128"
-export ALL_PROXY="http://localhost:3128"
