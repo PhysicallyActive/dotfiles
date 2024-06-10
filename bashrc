@@ -159,10 +159,6 @@ alias nvim='~/neovim/bin/nvim'
 alias pip='/usr/bin/pip3.11'
 alias fd='fdfind'
 
-# Python
-alias python='/usr/bin/python3.11'
-alias python3='/usr/bin/python3.11'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
