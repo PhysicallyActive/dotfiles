@@ -119,17 +119,22 @@ function parse_git_branch {
 	fi
 }
 
-# Command prompt color and look
-PS1="${debian_chroot:+($debian_chroot)}\001$COLOR_HOST\002\u@\h\001$COLOR_RESET\002:\001$COLOR_PATH\002./\W\$(parse_git_branch)\001$COLOR_RESET\002\n\001$COLOR_PATH\002[\D{%b %d | %H:%M:%S}]\001$COLOR_RESET\002\$ "
-unset color_prompt force_color_prompt
+# Setup oh-my-posh if exists, otherwise use normal bash-prompt
+if command -v oh-my-posh &>/dev/null; then
+	eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/ohmyposh.toml)"
+else
+	PS1="${debian_chroot:+($debian_chroot)}\001$COLOR_HOST\002\u@\h\001$COLOR_RESET\002:\001$COLOR_PATH\002./\W\$(parse_git_branch)\001$COLOR_RESET\002\n\001$COLOR_PATH\002[\D{%b %d | %H:%M:%S}]\001$COLOR_RESET\002\$ "
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm* | rxvt*)
-	PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-	;;
-*) ;;
-esac
+	unset color_prompt force_color_prompt
+
+	# If this is an xterm set the title to user@host:dir
+	case "$TERM" in
+	xterm* | rxvt*)
+		PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+		;;
+	*) ;;
+	esac
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

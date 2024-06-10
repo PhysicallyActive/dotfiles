@@ -62,13 +62,6 @@ echo "Don't forget to install tpm by running:"
 echo "  git clone https://github.com/tmux-plugins/tpm $TMUXDIR/plugins/tpm"
 echo "Open a tmux session and press 'prefix + I' (capital i, as in Install) to fetch the plugins."
 echo " "
-echo "DON'T FORGET TO CHANGE THE IS_VIM FUNCTION IN tmux/plugins/vim-tmux-navigator"
-
-# Git
-cp -r $HOME/.gitconfig $BAKDIR/gitconfig.bak
-rm $HOME/.gitconfig
-ln -sT $BASEDIR/gitconfig $HOME/.gitconfig
-
-echo "Done!"
+echo "DON'T FORGET TO CHANGE THE IS_VIM FUNCTION IN tmux/plugins/vim-tmux-navigator (the 'is_vim' fix: https://github.com/christoomey/vim-tmux-navigator/issues/295)"
 
 echo "Done!"
