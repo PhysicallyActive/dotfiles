@@ -6,8 +6,13 @@ echo "Initializing parameters and updating submodules..."
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TMUXDIR="$BASEDIR/tmux"
 NVIMDIR="$BASEDIR/nvim"
-CODEDIR="$BASEDIR/vscode"
 CONFDIR="$HOME/.config"
+OMPDIR="$CONFDIR/ohmyposh"
+BAKDIR="$HOME/backups"
+
+mkdir -p $CONFDIR
+mkdir -p $BAKDIR
+mkdir -p $OMPDIR
 
 ## Update Submodules
 git submodule update --init --recursive
@@ -17,37 +22,53 @@ echo "Generating symbolic links..."
 
 # Bash
 if [ -e "$HOME/.bashrc" ]; then
+	cp -r $HOME/.bashrc $BAKDIR/bashrc.bak
 	rm $HOME/.bashrc # Cleaning up old links
 fi
 ln -sT $BASEDIR/bashrc $HOME/.bashrc
 source $HOME/.bashrc
 if [ -e "$HOME/.bash_profile" ]; then
+	cp -r $HOME/.bash_profile $BAKDIR/bash_profile.bak
 	rm $HOME/.bash_profile # Cleaning up old links
 fi
 ln -sT $BASEDIR/bash_profile $HOME/.bash_profile
 
+# Oh-my-posh
+if [ -e "$OMPDIR/ohmyposh.toml" ]; then
+	cp -r $OMPDIR/ohmyposh.toml $BAKDIR/ohmyposh.toml.bak
+	rm $OMPDIR/ohmyposh.toml
+fi
+ln -sT $BASEDIR/ohmyposh.toml $OMPDIR/ohmyposh.toml
+
 # NeoVim
 if [ -d "$CONFDIR/nvim" ]; then
+	cp -r $CONFDIR/nvim $BAKDIR/nvim.bak
 	rm $CONFDIR/nvim # Cleaning up old links
 fi
 ln -sT $NVIMDIR/ $CONFDIR/nvim
-# 1. Install nvim
-# 2. NOTE: Mason (LSP/Linters/Formatters) need npm installed.
-#   - Also Note that both rg (ripgrep) and fd (fd-find) needs to be installed
-# 3. Open nvim and execute `<leader>l` followed by `I`
-# Note: if the fons aren't loading properly check this reddit thread:
-# https://www.reddit.com/r/Fedora/comments/u2fmwm/font_rendering_isnt_good_as_win_11/
+echo "Don't forget to install nvim"
+echo "NOTE: Mason (LSP/Linters/Formatters) need npm installed."
+echo "  - Also Note that both rg (ripgrep) and fd (fd-find) needs to be installed"
+echo "Open nvim and execute leader l followed by I"
 
 # Tmux
 if [ -d "$CONFDIR/tmux" ]; then
+	cp -r $CONFDIR/tmux $BAKDIR/tmux.bak
 	rm $CONFDIR/tmux # Cleaning up old links
 fi
 ln -sT $TMUXDIR $CONFDIR/tmux
 tmux source $CONFDIR/tmux/tmux.conf
-# 1. Install tpm by running:
-#   git clone https://github.com/tmux-plugins/tpm $TMUXDIR/plugins/tpm
-# 2. Open a tmux session and press `prefix + I` (capital i, as in Install) to fetch the plugins.
-# 3. Don't forget to add the `is_vim` fix: https://github.com/christoomey/vim-tmux-navigator/issues/295
+echo "Don't forget to install tpm by running:"
+echo "  git clone https://github.com/tmux-plugins/tpm $TMUXDIR/plugins/tpm"
+echo "Open a tmux session and press 'prefix + I' (capital i, as in Install) to fetch the plugins."
+echo " "
 echo "DON'T FORGET TO CHANGE THE IS_VIM FUNCTION IN tmux/plugins/vim-tmux-navigator"
+
+# Git
+cp -r $HOME/.gitconfig $BAKDIR/gitconfig.bak
+rm $HOME/.gitconfig
+ln -sT $BASEDIR/gitconfig $HOME/.gitconfig
+
+echo "Done!"
 
 echo "Done!"
