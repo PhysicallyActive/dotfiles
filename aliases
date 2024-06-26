@@ -11,3 +11,7 @@ alias l='ls -1'
 alias t='tree'
 
 alias tmux='TERM=xterm-256color tmux'
+
+alias pip='/usr/bin/pip3.11'
+alias nvim='~/neovim/bin/nvim'
+alias fd='fdfind'
