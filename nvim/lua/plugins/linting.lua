@@ -3,7 +3,7 @@ return {
   dependencies = { "mason.nvim" },
   opts = {
     linters_by_ft = {
-      python = { "mypy", "pylint", "flake8" },
+      python = { "pylint", "mypy" },
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },

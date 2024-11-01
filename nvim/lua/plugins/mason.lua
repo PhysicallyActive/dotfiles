@@ -9,6 +9,7 @@ return {
 
     -- linters
     table.insert(opts.ensure_installed, "eslint_d")
+    table.insert(opts.ensure_installed, "mypy")
     table.insert(opts.ensure_installed, "pylint")
   end,
 }
