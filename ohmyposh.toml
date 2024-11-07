@@ -81,7 +81,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     style = "plain"
     background = "transparent"
     foreground_templates = [
-      "{{if gt .Code 0}}red{{else}}magenta{{end}}"
+      "{{if gt .Code 0}}red{{else}}cyan{{end}}"
     ]
     template = "❯"
 
@@ -89,7 +89,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
 # Currently only works in fish, nu, zsh, powershell, and cmd
 [transient_prompt]
   foreground_templates = [
-    "{{if gt .Code 0}}red{{else}}magenta{{end}}"
+    "{{if gt .Code 0}}red{{else}}cyan{{end}}"
   ]
   background = "transparent"
   template = "\n❯ "
