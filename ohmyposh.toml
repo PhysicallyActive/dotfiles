@@ -19,7 +19,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     type = "python"
     style = "plain"
     background = "transparent"
-    foreground = "white"
+    foreground = "#fab387"
     template = "{{ if .Venv }}({{ .Venv }}) {{ end }}"
 
     [blocks.segments.properties]
@@ -63,7 +63,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     type = "executiontime"
     style = "plain"
     background = "transparent"
-    foreground = "yellow"
+    foreground = "#f5c2e7"
     template = "{{ .FormattedMs }}"
 
     [blocks.segments.properties]
