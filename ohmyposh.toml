@@ -19,7 +19,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     type = "python"
     style = "plain"
     background = "transparent"
-    foreground = "#fab387"
+    foreground = "white"
     template = "{{ if .Venv }}({{ .Venv }}) {{ end }}"
 
     [blocks.segments.properties]
@@ -81,7 +81,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     style = "plain"
     background = "transparent"
     foreground_templates = [
-      "{{if gt .Code 0}}red{{else}}cyan{{end}}"
+      "{{if gt .Code 0}}red{{else}}blue{{end}}"
     ]
     template = "❯"
 
@@ -89,7 +89,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
 # Currently only works in fish, nu, zsh, powershell, and cmd
 [transient_prompt]
   foreground_templates = [
-    "{{if gt .Code 0}}red{{else}}cyan{{end}}"
+    "{{if gt .Code 0}}red{{else}}blue{{end}}"
   ]
   background = "transparent"
   template = "\n❯ "
@@ -97,5 +97,5 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
 # Currently only works in zsh, powershell, and bash
 [secondary_prompt]
 background = "transparent"
-foreground = "magenta"
+foreground = "blue"
 template = "❯❯ "
