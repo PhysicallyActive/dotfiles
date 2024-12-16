@@ -76,3 +76,5 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HALCONROOT/lib/$HALCONARCH"
 # eval "$(fzf --zsh)"
 export PATH=$PATH:~/.local/bin
 eval "$(zoxide init --cmd cd zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
