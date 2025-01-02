@@ -5,11 +5,9 @@ return {
     table.insert(opts.ensure_installed, "prettierd")
     table.insert(opts.ensure_installed, "prettier")
     table.insert(opts.ensure_installed, "black")
-    table.insert(opts.ensure_installed, "isort")
 
     -- linters
     table.insert(opts.ensure_installed, "eslint_d")
     table.insert(opts.ensure_installed, "mypy")
-    table.insert(opts.ensure_installed, "pylint")
   end,
 }
