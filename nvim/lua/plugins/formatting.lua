@@ -1,14 +1,20 @@
 return {
   "stevearc/conform.nvim",
-  dependencies = { "mason.nvim" },
   opts = {
     formatters_by_ft = {
-      python = { "black", "isort" },
-      markdown = { "prettier" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-      html = { "prettier" },
+      vue = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescriptreact = { "prettier" },
+      markdown = { "prettier" },
       json = { "prettier" },
+      yaml = { "prettier" },
+      css = { "prettier" },
+      html = { "prettier" },
+      graphql = { "prettier" },
+      lua = { "stylua" },
+      python = { "black", "isort" },
     },
   },
 }

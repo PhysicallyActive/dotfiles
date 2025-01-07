@@ -1,0 +1,29 @@
+
+# ColourScheme
+[general]
+import = [
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+live_config_reload = true
+
+[window]
+dynamic_title = true
+
+[window.dimensions]
+columns = 240
+lines = 80
+
+[window.padding]
+x = 5
+y = 0
+
+[terminal.shell]
+program = "/bin/zsh"
+
+[env]
+term = "xterm-256color"
+
+[font]
+normal = {family = "JetBrains Mono Nerd Font Mono"}
+size = 9
+offset.y = 1
