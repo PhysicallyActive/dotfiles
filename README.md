@@ -3,7 +3,7 @@
 This repo holds my dotfiles. They are specific to my needs but if you are a:
 
 - Rust,
-- Python,
+- _Python_,
 - Lua, or
 - Bash programmer
 
