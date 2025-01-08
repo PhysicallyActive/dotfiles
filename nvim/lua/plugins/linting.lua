@@ -9,5 +9,10 @@ return {
       typescriptreact = { "eslint_d" },
       python = { "mypy", "pylint" },
     },
+    linters = {
+      pylint = {
+        args = { "--init-hook", "import sys; import os; sys.path.append(os.getcwd());" },
+      },
+    },
   },
 }
