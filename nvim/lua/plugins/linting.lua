@@ -7,12 +7,7 @@ return {
       vue = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      python = { "mypy", "pylint" },
-    },
-    linters = {
-      pylint = {
-        args = { "--init-hook", "import sys; import os; sys.path.append(os.getcwd());" },
-      },
+      python = { "mypy" },
     },
   },
 }
