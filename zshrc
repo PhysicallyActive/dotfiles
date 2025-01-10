@@ -77,5 +77,10 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+# Environment variables
+if [ -f ~/.env ]; then
+  . ~/.env
+fi
+
 # Shell integration
 eval "$(zoxide init --cmd cd zsh)"
