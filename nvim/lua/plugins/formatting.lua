@@ -14,7 +14,7 @@ return {
       html = { "prettier" },
       graphql = { "prettier" },
       lua = { "stylua" },
-      python = { "black", "ruff" },
+      python = { "black", "ruff_format" },
     },
   },
 }
