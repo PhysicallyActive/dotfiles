@@ -14,7 +14,7 @@ return {
       html = { "prettier" },
       graphql = { "prettier" },
       lua = { "stylua" },
-      python = { "black", "ruff_format" },
+      python = { "ruff_format", "isort" }, -- Need isort to sort on save...
     },
   },
 }
