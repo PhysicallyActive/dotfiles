@@ -229,8 +229,14 @@ bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id dmenu_run
 
 # Launch clipboard manager
-set $clipmanager cliphist list | wofi -dmenu | cliphist decode | wl-copy
-bindsym $mod+c exec $clipmanager
+bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard
 
-# lock the screen
+# Lock the screen
 bindsym $mod+n exec $HOME/.config/i3/lock-session.sh
+
+# Printscreen commands
+# Entire screen
+bindsym $mod+Shift+p exec $HOME/.config/i3/print-screen.sh
+# Selection screenshot
+bindsym $mod+Shift+s exec $HOME/.config/i3/print-section.sh
+

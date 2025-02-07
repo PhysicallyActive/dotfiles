@@ -12,22 +12,18 @@ INSTLOG="installation.log"
 
 install_dependencies() {
   echo -e "$CNT - Installing depdencies"
-  sudo apt install i3
+  sudo apt install i3 feh imagemagick rofi
   echo -e "$COK - Depdencies installed"
 }
 
-install_cliphist() {
-  CH="cliphist"
-  mkdir $CH
-  cd $CH
-  echo -e "$CNT - Downloading binaries for $CH (v0.5.0)"
-  wget -q https://github.com/sentriz/cliphist/releases/download/v0.5.0/v0.5.0-linux-amd64
-  mv v0.5.0-linux-amd64 $CH
+install_greenclip() {
+  CH="greenclip"
+  echo -e "$CNT - Downloading binaries for $CH (v4.2)"
+  wget -q https://github.com/erebe/greenclip/releases/download/v4.2/greenclip
   echo -e "$CNT - Setting permissions for $CH"
   chmod +x $CH
-  echo -e "$CNT - Moving $CH binaries to /usr/bin"
-  sudo cp $CH /usr/bin
-  cd ..
+  echo -e "$CNT - Moving $CH binaries to $HOME/.local/bin"
+  cp $CH "$HOME/.local/bin"
   rm -rf $CH
   echo -e "$COK - $CH was installed"
 }
@@ -58,7 +54,6 @@ backup_and_link() {
 main() {
   # set some expectations for the user
   echo -e "$CNT - You are about to execute a script that would attempt to setup i3."
-  sleep 1
 
   # attempt to discover if this is a VM or not
   echo -e "$CNT - Checking for Physical or VM..."
@@ -72,7 +67,6 @@ main() {
 
   # let the user know that we will use sudo
   echo -e "$CNT - This script will run some commands that require sudo. You will be prompted to enter your password. If you are worried about entering your password then you may want to review the content of the script."
-  sleep 1
 
   # give the user an option to exit out
   read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install (y,n) ' CONTINST
@@ -83,14 +77,13 @@ main() {
   echo -e "$CNT - Setup starting..."
 
   read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install required dependencies (y,n) ' CONTINST
-  if [[ $CONTINST != "Y" && $CONTINST != "y" ]]; then
+  if [[ $CONTINST == "Y" || $CONTINST == "y" ]]; then
     install_dependencies
   fi
 
-  read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install a clipboard manager (note that linux-amd64 is assumed)? (y,n) ' CONTINST
+  read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install a clipboard manager? (y,n) ' CONTINST
   if [[ $CONTINST == "Y" || $CONTINST == "y" ]]; then
-    sudo apt install wl-clipboard
-    install_cliphist
+    install_greenclip
   fi
 
   ### Copy Config Files ###
@@ -111,14 +104,10 @@ main() {
     echo -e "$CNT - Copying config files..."
     backup_and_link "i3" "i3"
     backup_and_link "backgrounds" "backgrounds"
-    backup_and_link "swappy" "swappy"
-    backup_and_link "waybar" "waybar"
-    backup_and_link "wofi" "wofi"
-    backup_and_link "i3-media-scripts" "i3-media-scripts"
+    backup_and_link "rofi" "rofi"
   fi
 
 }
 
 main
-### Script is done ###
 echo -e "$CNT - Script has completed!"
