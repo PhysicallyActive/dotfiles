@@ -1,0 +1,114 @@
+* {
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #89b4fa;
+    selected-col: #32323e;
+    bg-entry-area: #2e2e40;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #a6e3a1;
+    grey: #6c7086;
+
+    width: 35%;
+    font: "JetBrainsMono Nerd Font Mono 10";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 50%;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 20px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-entry-area;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 3px 0px 0px 3px;
+    margin: 3px 0px 0px -3px;
+    columns: 1;
+    lines: 10;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px 5px 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+element-icon {
+    size: 20px;
+    margin: 0px 5px;
+    margin: 0px 5px;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @fg-col2;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
+}

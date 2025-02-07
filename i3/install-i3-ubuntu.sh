@@ -51,6 +51,20 @@ backup_and_link() {
   echo -e "$COK - Symlink created from $SCRIPT_DIR/$SOURCE to $CONFIG_DIR/$TARGET"
 }
 
+add_rofi_configs() {
+  rofi_themes_dir="$HOME/.local/share/rofi/themes"
+  config_dir="$HOME/.config"
+
+  backup_and_link "rofi" "rofi"
+
+  mkdir -p "$rofi_themes_dir"
+  if [[ -d "$config_dir/catppuccin-mocha.rasi" ]]; then
+    rm -rf "$config_dir/catppuccin-mocha.rasi"
+  fi
+
+  ln -sf "$config_dir/catppuccin-mocha.rasi" "$rofi_themes_dir/catppuccin-mocha.rasi"
+}
+
 main() {
   # set some expectations for the user
   echo -e "$CNT - You are about to execute a script that would attempt to setup i3."
@@ -102,9 +116,9 @@ main() {
     done
 
     echo -e "$CNT - Copying config files..."
-    backup_and_link "i3" "i3"
-    backup_and_link "backgrounds" "backgrounds"
-    backup_and_link "rofi" "rofi"
+    # backup_and_link "i3" "i3"
+    # backup_and_link "backgrounds" "backgrounds"
+    add_rofi_configs
   fi
 
 }
