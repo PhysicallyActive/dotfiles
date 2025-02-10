@@ -13,8 +13,10 @@ return {
         },
       },
     },
-    matcher = {
-      frecency = true,
+    picker = {
+      matcher = {
+        frecency = true,
+      },
     },
   },
 }
