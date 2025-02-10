@@ -13,5 +13,8 @@ return {
         },
       },
     },
+    matcher = {
+      frecency = true,
+    },
   },
 }
