@@ -1,14 +1,22 @@
 #!/bin/bash
 
-tmpfile=$(mktemp)
+# Setup
 format='.png'
-tmpscreenshot="${tmpfile}${format}"
-targetdir=${1:-"$HOME/Pictures/Screenshots"}
 datetime=$(date +"%Y-%m-%d_%H-%M-%S")
+
+tmpfile=$(mktemp)
+tmpscreenshot="${tmpfile}${format}"
+
+targetdir=${1:-"$HOME/Pictures/Screenshots"}
 targetfile="$targetdir/screenshot-$datetime$format"
 
+# Required to allow i3 to finish processing the keyevent before allowing imagemagick to take over
+sleep 0.2
+
+# execution
 mv "$tmpfile" "$tmpscreenshot"
-import -window root "$tmpscreenshot"
+import "$tmpscreenshot"
 cp "$tmpscreenshot" "$targetfile"
 rm "$tmpscreenshot"
-xclip -i <"$targetfile"
+notify-send -t 5000 "Screenshot saved to $targetfile"
+xclip -selection clipboard -target image/png -i "$targetfile"

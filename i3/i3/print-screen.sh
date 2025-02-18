@@ -13,7 +13,7 @@ targetfile="$targetdir/screenshot-$datetime$format"
 # Extract focused window id from i3's tree
 focused_window=$(i3-msg -t get_tree | jq '.. | select(.focused? == true).window' | head -n 1)
 
-#
+# execution
 mv "$tmpfile" "$tmpscreenshot"
 import -window "$focused_window" "$tmpscreenshot"
 cp "$tmpscreenshot" "$targetfile"

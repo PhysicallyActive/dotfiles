@@ -237,7 +237,7 @@ bindsym $mod+n exec $HOME/.config/i3/lock-session.sh
 
 # Printscreen commands
 # Entire screen
-bindsym $mod+Shift+p exec $HOME/.config/i3/print-screen.sh
+bindsym $mod+Shift+p exec --no-startup-id $HOME/.config/i3/print-screen.sh
 # Selection screenshot
-bindsym $mod+Shift+s exec $HOME/.config/i3/print-section.sh
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.config/i3/print-section.sh
 
