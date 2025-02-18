@@ -21,8 +21,6 @@ vim.keymap.set("n", "<leader>tT", function()
 end, { desc = "Terminal (cwd)" })
 
 -- Window splitting
-vim.keymap.set("n", "<leader>sj", "<C-W>s", { desc = "Split window below", remap = true })
-vim.keymap.set("n", "<leader>sl", "<C-W>v", { desc = "Split window right", remap = true })
 vim.keymap.set("n", "<leader>wj", "<C-W>s", { desc = "Split window below", remap = true })
 vim.keymap.set("n", "<leader>wl", "<C-W>v", { desc = "Split window right", remap = true })
 
