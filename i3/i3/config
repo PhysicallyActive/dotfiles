@@ -59,8 +59,7 @@ exec_always feh --bg-scale $HOME/.config/backgrounds/shaded-landscape.jpeg
 exec_always $HOME/.screenlayout/work-setup.sh
 
 # Keyboard layout
-exec_always setxkbmap -layout gb,se
-exec_always setxkbmap -option 'grp:alt_shift_toggle'
+exec_always setxkbmap -layout gb,se -option 'grp:alt_shift_toggle'
 
 #====================================#
 # Activate the panel                 #
@@ -72,7 +71,7 @@ bar {
 }
 
 #====================================#
-# Keyboard Shortcuts (Sway-specific) #
+# Keyboard Modifiers                 #
 #====================================#
 
 # Set the modifier key to super:
@@ -80,13 +79,6 @@ set $mod Mod4
 
 # Set the ALT key to $alt (since Mod1 is harder to remember):
 set $alt Mod1
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #========================================#
 # Keyboard Shortcuts (Window Management) #
@@ -235,9 +227,16 @@ bindsym $mod+w exec rofi -show window
 # Lock the screen
 bindsym $mod+n exec $HOME/.config/i3/lock-session.sh
 
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# shutdown i3
+bindsym $mod+Shift+e exec --no-startup-id i3-msg exit
+
 # Printscreen commands
-# Entire screen
+# Print Entire screen
 bindsym $mod+Shift+p exec --no-startup-id $HOME/.config/i3/print-screen.sh
-# Selection screenshot
+# Print Selection of screen
 bindsym $mod+Shift+s exec --no-startup-id $HOME/.config/i3/print-section.sh
 
