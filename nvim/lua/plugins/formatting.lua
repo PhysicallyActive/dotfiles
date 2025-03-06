@@ -12,6 +12,7 @@ return {
       yaml = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
+      htmldjango = { "prettier" },
       graphql = { "prettier" },
       lua = { "stylua" },
       python = { "ruff_format", "isort" }, -- Need isort to sort on save...

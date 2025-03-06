@@ -177,6 +177,13 @@ assign [class="firefox"] $ws2
 assign [class="Microsoft-edge"] $ws0
 assign [class="KeePass2"] $ws9
 
+# Make sure we move to the newly opened window
+focus_on_window_activation focus
+for_window [urgent="latest" class="Alacritty"] focus
+for_window [urgent="latest" class="firefox"] focus
+for_window [urgent="latest" class="Microsoft-edge"] focus
+for_window [urgent="latest" class="KeePass2"] focus
+
 #=============================#
 # Keyboard Shortcuts (Layout) #
 #=============================#
