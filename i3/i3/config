@@ -139,7 +139,7 @@ bindsym $mod+r mode "resize"
 # Switch to workspace
 set $ws1 "1: IDE "
 set $ws2 "2: Web "
-set $ws3 "3"
+set $ws3 "3: Dev "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -174,6 +174,7 @@ bindsym $mod+Shift+0 move container to workspace $ws0
 
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
+assign [class="Google-chrome"] $ws3
 assign [class="Microsoft-edge"] $ws0
 assign [class="KeePass2"] $ws9
 
@@ -181,6 +182,7 @@ assign [class="KeePass2"] $ws9
 focus_on_window_activation focus
 for_window [urgent="latest" class="Alacritty"] focus
 for_window [urgent="latest" class="firefox"] focus
+for_window [urgent="latest" class="Google-chrome"] focus
 for_window [urgent="latest" class="Microsoft-edge"] focus
 for_window [urgent="latest" class="KeePass2"] focus
 

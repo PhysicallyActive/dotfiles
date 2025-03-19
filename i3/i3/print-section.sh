@@ -11,7 +11,7 @@ targetdir=${1:-"$HOME/Pictures/Screenshots"}
 targetfile="$targetdir/screenshot-$datetime$format"
 
 # Required to allow i3 to finish processing the keyevent before allowing imagemagick to take over
-sleep 0.2
+sleep 0.3
 
 # execution
 mv "$tmpfile" "$tmpscreenshot"
