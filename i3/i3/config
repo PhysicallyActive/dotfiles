@@ -68,6 +68,7 @@ exec_always setxkbmap -layout gb,se -option 'grp:alt_shift_toggle'
 bar {
     status_command i3status
     position top
+    bindsym button1 nop
 }
 
 #====================================#
