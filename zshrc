@@ -83,4 +83,6 @@ if [ -f ~/.env ]; then
 fi
 
 # Shell integration
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 eval "$(zoxide init --cmd cd zsh)"
