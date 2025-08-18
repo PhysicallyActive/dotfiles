@@ -53,7 +53,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Set the Wallpaper:
-exec_always feh --bg-scale $HOME/.config/backgrounds/shaded-landscape.jpeg
+exec_always feh --bg-scale $HOME/.config/backgrounds/city-skyline.png
 
 # Set the default displays at work
 exec_always $HOME/.screenlayout/work-setup.sh
