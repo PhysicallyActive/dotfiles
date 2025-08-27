@@ -1,4 +1,4 @@
-/* https://github.com/LazyVim/LazyVim/pull/6354#issuecomment-3202799735 */
+-- https://github.com/LazyVim/LazyVim/pull/6354#issuecomment-3202799735
 return {
   "akinsho/bufferline.nvim",
   init = function()
