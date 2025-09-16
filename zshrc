@@ -86,3 +86,4 @@ fi
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(kubectl completion zsh)"
