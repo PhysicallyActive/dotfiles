@@ -57,6 +57,8 @@ exec_always feh --bg-scale $HOME/.config/backgrounds/city-skyline.png
 
 # Set the default displays at work
 exec_always $HOME/.screenlayout/work-setup.sh
+# exec_always $HOME/.screenlayout/work-setup-laptop.sh
+# exec_always $HOME/.screenlayout/home-setup.sh
 
 # Keyboard layout
 exec_always setxkbmap -layout gb,se -option 'grp:alt_shift_toggle'
