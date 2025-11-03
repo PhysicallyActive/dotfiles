@@ -16,8 +16,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-if [ -d "$1" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+if [ -d "$HOME/.local/bin" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     PATH="${PATH:+"$PATH:"}$HOME/.local/bin"
+fi
+
+if [ -d "$HOME/.local/kitty.app/bin" ] && [[ ":$PATH:" != *":$HOME/.local/kitty.app/bin:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$HOME/.local/kitty.app/bin"
 fi
 
 # Zsh plugins

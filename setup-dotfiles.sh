@@ -115,6 +115,14 @@ install_alacritty() {
   fi
 }
 
+# Install Kitty configuration
+install_kitty() {
+  read -rep $'[\e[1;33mACTION\e[0m] - Do you want to install Kitty configuration? (y/n) ' -n 1 CONTINST
+  if [[ $CONTINST =~ ^[Yy]$ ]]; then
+    backup_and_link "$BASEDIR/kitty" "$CONFDIR/kitty" "kitty"
+  fi
+}
+
 # Install Git configuration
 install_git() {
   read -rep $'[\e[1;33mACTION\e[0m] - Do you want to install Git configuration? (y/n) ' -n 1 CONTINST
@@ -135,6 +143,7 @@ install_zsh
 install_nvim
 install_tmux
 install_alacritty
+install_kitty
 install_git
 
 echo -e "$COK - Done!"
