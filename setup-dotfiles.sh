@@ -115,6 +115,14 @@ install_alacritty() {
   fi
 }
 
+# Install Kitty configuration
+install_kitty() {
+  read -rep $'[\e[1;33mACTION\e[0m] - Do you want to install Kitty configuration? (y/n) ' -n 1 CONTINST
+  if [[ $CONTINST =~ ^[Yy]$ ]]; then
+    backup_and_link "$BASEDIR/kitty" "$CONFDIR/kitty" "kitty"
+  fi
+}
+
 # Install Git configuration
 install_git() {
   read -rep $'[\e[1;33mACTION\e[0m] - Do you want to install Git configuration? (y/n) ' -n 1 CONTINST
@@ -135,6 +143,7 @@ install_zsh
 install_nvim
 install_tmux
 install_alacritty
+install_kitty
 install_git
 
 echo -e "$COK - Done!"
@@ -145,4 +154,5 @@ if [[ $CONTINST =~ ^[yY]$ ]]; then
   echo -e "$CAT - Install fzf, ripgrep, fd-find, and npm"
   echo -e "$CAT - Install oh-my-posh"
   echo -e "$CAT - For Hyprland: Run 'install-hyprland.sh' in $BASEDIR/hyprland/"
+  echo -e "$CAT - Don't forget to integrate kitty into your desktop environment: https://sw.kovidgoyal.net/kitty/binary/#desktop-integration-on-linux"
 fi

@@ -58,6 +58,7 @@ exec_always feh --bg-scale $HOME/.config/backgrounds/city-skyline.png
 # Set the default displays at work
 exec_always $HOME/.screenlayout/work-setup.sh
 # exec_always $HOME/.screenlayout/work-setup-laptop.sh
+# exec_always $HOME/.screenlayout/bla-jungfrun.sh
 # exec_always $HOME/.screenlayout/home-setup.sh
 
 # Keyboard layout
@@ -176,6 +177,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 assign [class="Alacritty"] $ws1
+assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Microsoft-edge"] $ws0
@@ -184,6 +186,7 @@ assign [class="KeePass2"] $ws9
 # Make sure we move to the newly opened window
 focus_on_window_activation focus
 for_window [urgent="latest" class="Alacritty"] focus
+for_window [urgent="latest" class="kitty"] focus
 for_window [urgent="latest" class="firefox"] focus
 for_window [urgent="latest" class="Google-chrome"] focus
 for_window [urgent="latest" class="Microsoft-edge"] focus
@@ -221,7 +224,7 @@ bindsym $mod+g exec firefox
 bindsym $mod+e exec nautilus
 
 # Open a terminal emulator:
-set $term alacritty
+set $term kitty
 bindsym $mod+Return exec $term
 
 # Kill focused window:
