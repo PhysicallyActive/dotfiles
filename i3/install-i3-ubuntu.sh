@@ -100,6 +100,11 @@ main() {
     install_greenclip
   fi
 
+  read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install the screenlayouts? (y,n) ' CONTINST
+  if [[ $CONTINST == "Y" || $CONTINST == "y" ]]; then
+    backup_and_link "screenlayouts" "screenlayouts"
+  fi
+
   ### Copy Config Files ###
   read -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
   if [[ $CFG == "Y" || $CFG == "y" ]]; then
