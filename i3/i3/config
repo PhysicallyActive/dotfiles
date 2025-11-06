@@ -224,7 +224,7 @@ bindsym $mod+g exec firefox
 bindsym $mod+e exec nautilus
 
 # Open a terminal emulator:
-set $term alacritty
+set $term kitty
 bindsym $mod+Return exec $term
 
 # Kill focused window:

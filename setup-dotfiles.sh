@@ -154,4 +154,5 @@ if [[ $CONTINST =~ ^[yY]$ ]]; then
   echo -e "$CAT - Install fzf, ripgrep, fd-find, and npm"
   echo -e "$CAT - Install oh-my-posh"
   echo -e "$CAT - For Hyprland: Run 'install-hyprland.sh' in $BASEDIR/hyprland/"
+  echo -e "$CAT - Don't forget to integrate kitty into your desktop environment: https://sw.kovidgoyal.net/kitty/binary/#desktop-integration-on-linux"
 fi

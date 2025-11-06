@@ -20,10 +20,6 @@ if [ -d "$HOME/.local/bin" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     PATH="${PATH:+"$PATH:"}$HOME/.local/bin"
 fi
 
-if [ -d "$HOME/.local/kitty.app/bin" ] && [[ ":$PATH:" != *":$HOME/.local/kitty.app/bin:"* ]]; then
-    PATH="${PATH:+"$PATH:"}$HOME/.local/kitty.app/bin"
-fi
-
 # Zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
