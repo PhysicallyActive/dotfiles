@@ -238,6 +238,9 @@ bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard
 # Launch window manager
 bindsym $mod+w exec rofi -show window
 
+# Clear the notifications off screen
+bindsym $mod+Shift+n exec dunstctl close-all
+
 # Lock the screen
 bindsym $mod+n exec $HOME/.config/i3/lock-session.sh
 
